@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock Analysis</title>
+</head>
+<body>
+    <h1>Analysis for {{ ticker }}</h1>
+    <img src="data:image/png;base64,{{ graph }}" alt="Stock Graph">
+    <div>
+        <h2>Statistics:</h2>
+        <p>Pre-event Mean Return: {{ stats.pre_event_mean_return }}</p>
+        <p>Post-event Mean Return: {{ stats.post_event_mean_return }}</p>
+        <p>Pre-event Volatility: {{ stats.pre_event_volatility }}</p>
+        <p>Post-event Volatility: {{ stats.post_event_volatility }}</p>
+        <p>{{ expected_return }}</p>
+    </div>
+    <a href="{{ url_for('index') }}">Back to tickers</a>
+</body>
+</html>

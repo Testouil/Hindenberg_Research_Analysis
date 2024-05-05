@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Article Tickers</title>
+</head>
+<body>
+    <h1>Tickers Published by Hindenburg Research</h1>
+    <ul>
+        {% for item in tickers_and_dates %}
+        <li><a href="{{ url_for('analysis', ticker=item['ticker'], date=item['date_published'].strftime('%Y-%m-%d')) }}">{{ item['ticker'] }} - {{ item['date_published'].strftime('%Y-%m-%d') }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
